@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Weather Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+      <div class="top-banner">
+        <h1 class="heading">Weather Dashboard</h1>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <form class="form-inline center">
+            <div class="form-group mx-sm-3 mb-2">
+              <input list="listCities" id="city" placeholder="City name" autofocus>
+                <datalist id="listCities">
+                </datalist>
+            </div>              
+            <button type="submit" id="submit">Search</button>                 
+          </form>           
+        </div>
+        <div id ="error" class="alert alert-danger text-center center" role="alert"></div>  <br>
+         
+        <div class="container-fluid mx-1 my-3 px-4 py-2 currentWeatherBox card-body" id="currentWeatherBox">        
+          <div class="row">
+                <div class="col-6 text-center"><br>
+                  <h5 id="cityName"></h5>
+                  <img class="center" src="" id="imgWeather">
+                </div>
+                <div class="col-6"><br>
+                  <p id="temperature"></p>
+                  <p id="humidity"></p>
+                  <p id="windSpeed"></p>
+                  UV Index: <span id ="uv"></span> <br>  <br>
+                </div>
+          </div>              
+        </div>        
+        <div id = "forecast5Days">
+          <div class="row">
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p id="day1" class="date"></p>
+                  <img class="center" src="" id="img1">
+                  <p id="temp1"></p>
+                  <p id="hum1"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p id="day2" class="date"></p>
+                  <img class="center" src="" id="img2">
+                  <p id="temp2"></p>
+                  <p id="hum2"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-body text-center">
+                    <p id="day3" class="date"></p>
+                    <img class="center" src="" id="img3">
+                    <p id="temp3"></p>
+                    <p id="hum3"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-body text-center">
+                    <p id="day4" class="date"></p>
+                    <img class="center" src="" id="img4">
+                    <p id="temp4"></p>
+                    <p id="hum4"></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card">
+                <div class="card-body text-center">
+                    <p id="day5" class="date"></p>
+                    <img class="center" src="" id="img5">
+                    <p id="temp5"></p>
+                    <p id="hum5"></p>
+                </div>
+              </div>
+            </div>
+      </div>
+        </div>        
+      </div>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="script.js"></script>
+</body>
+</html>
