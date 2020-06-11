@@ -63,7 +63,7 @@ $(document).ready(function(){
             //Current weather      
             $.ajax({
                 type: "POST",
-                url: "https://api.openweathermap.org/data/2.5/weather?q=" +  city + "&appid=b51abdee5b3b9624a656ba1751e50530" + "&units=imperial",
+                url: "http://api.openweathermap.org/data/2.5/weather?q=" +  city + "&appid=b51abdee5b3b9624a656ba1751e50530" + "&units=imperial",
                 dataType: "json",
                 success: function (result, status, xhr) {
                     
@@ -77,7 +77,7 @@ $(document).ready(function(){
                     
                     // Call the funtion getUV to get UV Index
                     getUV( result["coord"]["lat"] , result["coord"]["lon"]); 
-                    imagWeather.src= "https://openweathermap.org/img/wn/"+result["weather"]["0"]["icon"]+"@2x.png";
+                    imagWeather.src= "http://openweathermap.org/img/wn/"+result["weather"]["0"]["icon"]+"@2x.png";
 
                     //Search history
                     var exist = 0;
