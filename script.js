@@ -63,7 +63,7 @@ $(document).ready(function(){
             //Current weather      
             $.ajax({
                 type: "POST",
-                url: "http://api.openweathermap.org/data/2.5/weather?q=" +  city + "&appid=b51abdee5b3b9624a656ba1751e50530" + "&units=imperial",
+                url: "https://api.openweathermap.org/data/2.5/weather?q=" +  city + "&appid=b51abdee5b3b9624a656ba1751e50530" + "&units=imperial",
                 dataType: "json",
                 success: function (result, status, xhr) {
                     
@@ -77,7 +77,7 @@ $(document).ready(function(){
                     
                     // Call the funtion getUV to get UV Index
                     getUV( result["coord"]["lat"] , result["coord"]["lon"]); 
-                    imagWeather.src= "http://openweathermap.org/img/wn/"+result["weather"]["0"]["icon"]+"@2x.png";
+                    imagWeather.src= "https://openweathermap.org/img/wn/"+result["weather"]["0"]["icon"]+"@2x.png";
 
                     //Search history
                     var exist = 0;
@@ -113,7 +113,7 @@ $(document).ready(function(){
             ///// Get 5 Daily Forecast
             $.ajax({
                 dataType: 'json',
-                url: 'http://api.openweathermap.org/data/2.5/forecast/daily',
+                url: 'https://api.openweathermap.org/data/2.5/forecast/daily',
                 data: {
                   q: city,
                   units: 'imperial',
@@ -125,31 +125,31 @@ $(document).ready(function(){
                     document.getElementById('forecast5Days').style.display = "inline";
                     // Day 1
                     document.getElementById("day1").innerHTML  = date1;
-                    img1.src= "http://openweathermap.org/img/wn/"+result["list"]["1"]["weather"]["0"]["icon"]+"@2x.png";
+                    img1.src= "https://openweathermap.org/img/wn/"+result["list"]["1"]["weather"]["0"]["icon"]+"@2x.png";
                     document.getElementById("temp1").innerHTML  = "Temperature: "+result["list"]["1"]["temp"]["eve"] + " °F";
                     document.getElementById("hum1").innerHTML  = "Humidity: "+result["list"]["1"]["humidity"] + " %";
 
                     // Day 2
                     document.getElementById("day2").innerHTML  = date2;
-                    img2.src= "http://openweathermap.org/img/wn/"+result["list"]["2"]["weather"]["0"]["icon"]+"@2x.png";
+                    img2.src= "https://openweathermap.org/img/wn/"+result["list"]["2"]["weather"]["0"]["icon"]+"@2x.png";
                     document.getElementById("temp2").innerHTML  = "Temperature: "+result["list"]["2"]["temp"]["eve"] + " °F";
                     document.getElementById("hum2").innerHTML  = "Humidity: "+result["list"]["2"]["humidity"] + " %";
 
                     // Day 3
                     document.getElementById("day3").innerHTML  = date3;
-                    img3.src= "http://openweathermap.org/img/wn/"+result["list"]["3"]["weather"]["0"]["icon"]+"@2x.png";
+                    img3.src= "https://openweathermap.org/img/wn/"+result["list"]["3"]["weather"]["0"]["icon"]+"@2x.png";
                     document.getElementById("temp3").innerHTML  = "Temperature: "+result["list"]["3"]["temp"]["eve"] + " °F";
                     document.getElementById("hum3").innerHTML  = "Humidity: "+result["list"]["3"]["humidity"] + " %";
 
                     // Day 4
                     document.getElementById("day4").innerHTML  = date4;
-                    img4.src= "http://openweathermap.org/img/wn/"+result["list"]["4"]["weather"]["0"]["icon"]+"@2x.png";
+                    img4.src= "https://openweathermap.org/img/wn/"+result["list"]["4"]["weather"]["0"]["icon"]+"@2x.png";
                     document.getElementById("temp4").innerHTML  = "Temperature: "+result["list"]["4"]["temp"]["eve"] + " °F";
                     document.getElementById("hum4").innerHTML  = "Humidity: "+result["list"]["4"]["humidity"] + " %";
 
                     // Day 5
                     document.getElementById("day5").innerHTML  = date5;
-                    img5.src= "http://openweathermap.org/img/wn/"+result["list"]["5"]["weather"]["0"]["icon"]+"@2x.png";
+                    img5.src= "https://openweathermap.org/img/wn/"+result["list"]["5"]["weather"]["0"]["icon"]+"@2x.png";
                     document.getElementById("temp5").innerHTML  = "Temperature: "+result["list"]["5"]["temp"]["eve"] + " °F";
                     document.getElementById("hum5").innerHTML  = "Humidity: "+result["list"]["5"]["humidity"] + " %";
               });
@@ -165,7 +165,7 @@ $(document).ready(function(){
     function getUV(lat, lon){
         $.ajax({
             type: "GET",
-            url: "http://api.openweathermap.org/data/2.5/uvi?appid=b51abdee5b3b9624a656ba1751e50530&lat="+lat +"&lon="+lon,
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=b51abdee5b3b9624a656ba1751e50530&lat="+lat +"&lon="+lon,
             dataType: "json",
             success: function (result, status, xhr) {
                 var uv = result["value"];
